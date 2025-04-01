@@ -31,14 +31,14 @@ include "partials/header.html"
         <div class="card-body">
             <?php
             if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-            echo '<h2>Seja bem-vindo faça login para mais beneficios</h2>';
+            echo ucwords('<h2 class= "text-center">Seja bem-vindo, faça seu login para mais beneficios</h2>');
             }else{
-                echo '<h2>Seja Bem Vindo ' . htmlspecialchars($_SESSION["username"]) . '</h2>
-                <a href="professor/visualizar.php" class="btn btn-success me-2 mt-2">Visualizar Livros</a>';
+                echo ucwords('<h2 class= "text-center">Seja Bem Vindo ' . htmlspecialchars($_SESSION["username"]) . '</h2>');
+                echo '<a href="professor/visualizar.php" class="btn btn-success btn-lg me-2 mt-2 w-100">Visualizar Livros</a>';
             }
             
-            if($_SESSION['username']=== "bibliotecario"){
-                echo '<a href="bibliotecario/pedidos.php" class="btn btn-light me-2 mt-2">Visualizar Pedidos</a>';
+            if(isset($_SESSION['username']) && $_SESSION['username'] === "bibliotecario") {
+                echo '<a href="bibliotecario/pedidos.php" class="btn btn-light me-2 mt-2 btn-lg w-100">Visualizar Pedidos</a>';
             }
     ?>
         </div>

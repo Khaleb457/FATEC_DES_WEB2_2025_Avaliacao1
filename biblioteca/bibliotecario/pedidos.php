@@ -3,19 +3,20 @@
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         header("location: ../login.php");
         exit;
+    }elseif($_SESSION["username"] === "professor"){
+        header("location: ../index.php");
     }
-    include "../partials/header.html";
 include "../partials/header.html"
 ?>
 <div class="card">
   <div class="card-header fs-2">
-    Livros Cadastrados
+    Pedidos Cadastrados
   </div>
     <?php
-    $txt = "../bibliotecario/livros.txt";
+    $txt = "../professor/pedidos.txt";
     if(!file_exists($txt)){
         echo '<div class="alert alert-warning mb-4 mt-4">';
-        echo 'Nenhum livro cadastrado ainda. O sistema ainda não possui registros.';
+        echo 'Nenhum Pedido cadastrado ainda. O sistema ainda não possui registros.';
         echo '</div>';
     }else{
         echo '<div class="card-body">
@@ -29,7 +30,7 @@ include "../partials/header.html"
           </tr>
         </thead>
         <tbody>';
-        $handle = fopen("../bibliotecario/livros.txt", "r");
+        $handle = fopen("../professor/pedidos.txt", "r");
         if($handle){
             while(!feof($handle)){
                 $linha = trim(fgets($handle));
@@ -48,7 +49,7 @@ include "../partials/header.html"
             }
             fclose($handle);
         }else{
-            echo '<tr><td colspan="4" class="text-center text-danger">Erro ao carregar os livros</td></tr>';
+            echo '<tr><td colspan="4" class="text-center text-danger">Erro ao carregar os pedidos</td></tr>';
         }
     }
     ?>

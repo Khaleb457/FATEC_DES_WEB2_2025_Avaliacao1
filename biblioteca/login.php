@@ -28,6 +28,7 @@
                 <input type="password" class="form-control" id="exampleInputPassword1" name="senha" required>
             </div>
             <button type="submit" class="btn btn-primary w-100">Conectar-se</button>
+            <a href="index.php" class="btn btn-warning w-100 mt-3" role="button">Voltar</a>
         </form>
     </div>
 
