@@ -1,0 +1,4 @@
+Titulo: 1|Autor: 1|Editora: 1|ISBN: 1
+Titulo: 1|Autor: 1|Editora: 1|ISBN: 1
+Titulo: 2|Autor: 2|Editora: 2|ISBN: 2
+Titulo: 4|Autor: 4|Editora: 4|ISBN: 4
